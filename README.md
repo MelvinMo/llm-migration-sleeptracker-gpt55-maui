@@ -1,8 +1,8 @@
 # Sleep Tracker — GPT-5.5 → .NET MAUI Migration
 
-> This is repo 3 of 7 from my M.Sc. thesis at McMaster University, *"Who Moved My Button?": A Usability Evaluation of LLM-Assisted Cross-Platform Migration*. I had two AI coding agents (Claude Sonnet 4.6 and GPT-5.5) each migrate a real mobile health app to three different frameworks, then evaluated all 7 resulting apps for usability. This repo is GPT-5.5's rewrite in .NET MAUI — it turned out to be the worst-performing migration of the six. The other six are linked below.
+> Repo 3/7 from my M.Sc. thesis, *"Who Moved My Button?"* (McMaster, 2026) — GPT-5.5's migration to .NET MAUI, the worst-performing of the six. Other repos + baseline linked below.
 
-.NET MAUI (C#) rewrite of the original React Native "Sleep Tracker" privacy-transparency app, produced by **GPT-5.5** under a shared 15-rule migration prompt I wrote. It talks to the same Node.js/Express backend as the original app (see [thesis-privacy-baseline](https://github.com/MelvinMo/thesis-privacy-baseline)).
+.NET MAUI (C#) rewrite of the original React Native "Sleep Tracker" privacy-transparency app, produced by **GPT-5.5** under a shared 15-rule migration prompt I wrote. It talks to the same Node.js/Express backend as the original app (see [llm-migration-sleeptracker-baseline](https://github.com/MelvinMo/llm-migration-sleeptracker-baseline)).
 
 ---
 
@@ -24,13 +24,13 @@ This is the least usable of all seven implementations evaluated in the thesis �
 
 | Repo | Description |
 |---|---|
-| [thesis-privacy-baseline](https://github.com/MelvinMo/thesis-privacy-baseline) | Original React Native app (unmodified snapshot) |
-| [thesis-privacy-sonnet46-kmp](https://github.com/MelvinMo/thesis-privacy-sonnet46-kmp) | Claude Sonnet 4.6 → KMP |
-| [thesis-privacy-sonnet46-flutter](https://github.com/MelvinMo/thesis-privacy-sonnet46-flutter) | Claude Sonnet 4.6 → Flutter |
-| [thesis-privacy-sonnet46-maui](https://github.com/MelvinMo/thesis-privacy-sonnet46-maui) | Claude Sonnet 4.6 → .NET MAUI |
-| [thesis-privacy-gpt55-kmp](https://github.com/MelvinMo/thesis-privacy-gpt55-kmp) | GPT-5.5 → KMP |
-| [thesis-privacy-gpt55-flutter](https://github.com/MelvinMo/thesis-privacy-gpt55-flutter) | GPT-5.5 → Flutter |
-| **thesis-privacy-gpt55-maui** | **This repo** — GPT-5.5 → .NET MAUI |
+| [llm-migration-sleeptracker-baseline](https://github.com/MelvinMo/llm-migration-sleeptracker-baseline) | Original React Native app (unmodified snapshot) |
+| [llm-migration-sleeptracker-sonnet46-kmp](https://github.com/MelvinMo/llm-migration-sleeptracker-sonnet46-kmp) | Claude Sonnet 4.6 → KMP |
+| [llm-migration-sleeptracker-sonnet46-flutter](https://github.com/MelvinMo/llm-migration-sleeptracker-sonnet46-flutter) | Claude Sonnet 4.6 → Flutter |
+| [llm-migration-sleeptracker-sonnet46-maui](https://github.com/MelvinMo/llm-migration-sleeptracker-sonnet46-maui) | Claude Sonnet 4.6 → .NET MAUI |
+| [llm-migration-sleeptracker-gpt55-kmp](https://github.com/MelvinMo/llm-migration-sleeptracker-gpt55-kmp) | GPT-5.5 → KMP |
+| [llm-migration-sleeptracker-gpt55-flutter](https://github.com/MelvinMo/llm-migration-sleeptracker-gpt55-flutter) | GPT-5.5 → Flutter |
+| **llm-migration-sleeptracker-gpt55-maui** | **This repo** — GPT-5.5 → .NET MAUI |
 
 ---
 
@@ -115,7 +115,7 @@ Copy the example file for reference values:
 cp .env.example .env
 ```
 
-Backend URLs are compiled-in constants in `Services/AppConfig.cs`. Update `ApiUnencryptedUrl` to your machine's LAN IP (find it with `ipconfig`/`ifconfig`), or `ApiEncryptedUrl` to your own deployed backend, then rebuild. To run the backend locally, see [thesis-privacy-baseline](https://github.com/MelvinMo/thesis-privacy-baseline).
+Backend URLs are compiled-in constants in `Services/AppConfig.cs`. Update `ApiUnencryptedUrl` to your machine's LAN IP (find it with `ipconfig`/`ifconfig`), or `ApiEncryptedUrl` to your own deployed backend, then rebuild. To run the backend locally, see [llm-migration-sleeptracker-baseline](https://github.com/MelvinMo/llm-migration-sleeptracker-baseline).
 
 ---
 
