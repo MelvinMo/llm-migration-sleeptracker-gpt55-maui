@@ -1,14 +1,14 @@
 # Sleep Tracker — GPT-5.5 → .NET MAUI Migration
 
-> **Thesis artifact 3 of 7.** This repository is one implementation from a McMaster University M.Sc. thesis studying whether AI coding agents can migrate a mobile health app across frameworks without degrading usability. See [Thesis citation](#thesis-citation) and [Related repositories](#related-repositories) below.
+> This is repo 3 of 7 from my M.Sc. thesis at McMaster University, *"Who Moved My Button?": A Usability Evaluation of LLM-Assisted Cross-Platform Migration*. I had two AI coding agents (Claude Sonnet 4.6 and GPT-5.5) each migrate a real mobile health app to three different frameworks, then evaluated all 7 resulting apps for usability. This repo is GPT-5.5's rewrite in .NET MAUI — it turned out to be the worst-performing migration of the six. The other six are linked below.
 
-.NET MAUI (C#) rewrite of the original React Native "Sleep Tracker" privacy-transparency app, produced by **GPT-5.5** under a shared 15-rule migration prompt. It talks to the same Node.js/Express backend as the original app (see [thesis-privacy-baseline](https://github.com/MelvinMo/thesis-privacy-baseline)).
+.NET MAUI (C#) rewrite of the original React Native "Sleep Tracker" privacy-transparency app, produced by **GPT-5.5** under a shared 15-rule migration prompt I wrote. It talks to the same Node.js/Express backend as the original app (see [thesis-privacy-baseline](https://github.com/MelvinMo/thesis-privacy-baseline)).
 
 ---
 
-## Usability findings (from the thesis)
+## Usability findings (from my thesis)
 
-This migration was evaluated with Nielsen's ten usability heuristics across six standardized tasks by a single assessor (severity 0–4, lower is better). Full detail is in **Chapter 5** of the thesis (App 3).
+This migration was evaluated with Nielsen's ten usability heuristics across six standardized tasks by a single assessor (severity 0–4, lower is better). Full detail is in **Chapter 5** of my thesis (App 3).
 
 | Metric | Value |
 |---|---|
@@ -129,7 +129,7 @@ Expect microphone, notification, and sensor-related permission prompts while tes
 
 - .NET 9 MAUI single-project app, MVVM via `CommunityToolkit.Mvvm` (`ObservableObject` + relay commands).
 - `Microsoft.Data.Sqlite`, preserving the original `journals` and `sensor_data` table/column names.
-- MAUI `SecureStorage` (Android Keystore / iOS Keychain-backed) for tokens.
+- MAUI `SecureStorage` (Android Keystore-backed) for tokens.
 - Android package ID: `com.mcscert.sleeptracker.mauidev`.
 
 ---
@@ -143,20 +143,19 @@ Expect microphone, notification, and sensor-related permission prompts while tes
 │   └── AppConfig.cs         # Backend URLs (see Section 4)
 ├── Models/
 ├── Platforms/Android/
-├── Platforms/iOS/
 ├── .env.example             # Backend URL reference values (see Section 4)
 └── .gitignore
 ```
 
 ---
 
-## Known limitations (from the thesis)
+## Known limitations (from my thesis)
 
 - Bedtime/alarm entry, diary editing, and sleep-note selection use generic `DisplayPromptAsync`/`DisplayActionSheet` system dialogs rather than the source app's custom controls.
 - The multi-select sleep-note interaction is constrained to single-select by `DisplayActionSheet`, even though the underlying toggle logic supports multi-select.
 - The privacy tooltip omits tappable links to the PIPEDA regulation, Privacy Policy section, and Opt Out preferences.
 - Edit affordances use plain "Edit" text buttons rather than the source app's pencil icon.
-- See Chapter 5 of the thesis for the full task-by-task and heuristic-by-heuristic severity breakdown, including the two other GPT-5.5 migrations (KMP, Flutter).
+- See Chapter 5 of my thesis for the full task-by-task and heuristic-by-heuristic severity breakdown, including the two other GPT-5.5 migrations (KMP, Flutter).
 
 ---
 
@@ -166,9 +165,9 @@ This repository contains **no real credentials**. `.env.example` holds placehold
 
 ---
 
-## Thesis citation
+## Citing my thesis
 
-If you reference this artifact, please cite:
+If you're referencing this repo, here's the full citation:
 
 > Mokhtari, M. (2026). *"Who Moved My Button?": A Usability Evaluation of LLM-Assisted Cross-Platform Migration* [Master's thesis, McMaster University]. Department of Computing and Software. Supervisor: Richard F. Paige.
 
@@ -176,4 +175,4 @@ If you reference this artifact, please cite:
 
 ## License
 
-All rights reserved. This repository is published for academic review and reproducibility alongside the thesis above. No license is granted for reuse, modification, or redistribution without permission from the author.
+All rights reserved — this is my thesis work. I've published it publicly so it's easy to review and reproduce, but please reach out to me before reusing or redistributing any of it.
